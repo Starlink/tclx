@@ -239,7 +239,7 @@ EvalFilePart (interp, fileName, offset, length)
      */
     buf = ckalloc (strlen (fileName) + 64);
     sprintf (buf, "\n    (file \"%s\" line %d)", fileName,
-             interp->errorLine);
+             Tcl_GetErrorLine(interp));
     Tcl_AddErrorInfo (interp, buf);
     ckfree (buf);
     goto errorExit;

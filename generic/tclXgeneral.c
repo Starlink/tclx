@@ -405,7 +405,7 @@ TclX_LoopObjCmd (dummy, interp, objc, objv)
 		char buf [64];
 		
 		sprintf (buf, "\n    (\"loop\" body line %d)", 
-			interp->errorLine);
+			Tcl_GetErrorLine(interp));
 		Tcl_AddErrorInfo (interp, buf);
 	    }
 	    break;
