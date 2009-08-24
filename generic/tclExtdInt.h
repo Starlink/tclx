@@ -32,6 +32,14 @@
 #endif
 
 /*
+ * Macro access to the interp errorLine member. Access to this removed
+ * in Tcl 8.6.
+ */
+#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION < 6
+#define Tcl_GetErrorLine(interp) (interp->errorLine)
+#endif
+
+/*
  * Internal interp flags compatibility - removed in Tcl 8.5 sources.
  */
 #ifndef ERR_IN_PROGRESS
@@ -80,7 +88,7 @@
 #    ifdef LONG_MAX /* POSIX */
 #        define MAXLONG LONG_MAX
 #    else
-#        define MAXLONG MAXINT  
+#        define MAXLONG MAXINT
 #    endif
 #endif
 
@@ -286,9 +294,9 @@ TclX_JoinPath _ANSI_ARGS_((char        *path1,
                            char        *path2,
                            Tcl_DString *joinedPath));
 
-extern int  
-TclX_WrongArgs _ANSI_ARGS_((Tcl_Interp *interp, 
-                            Tcl_Obj    *commandNameObj, 
+extern int
+TclX_WrongArgs _ANSI_ARGS_((Tcl_Interp *interp,
+                            Tcl_Obj    *commandNameObj,
 			    char       *string));
 
 extern int
@@ -475,7 +483,7 @@ TclXOSFstat _ANSI_ARGS_((Tcl_Interp  *interp,
                          Tcl_Channel  channel,
                          struct stat *statBuf,
                          int         *ttyDev));
-    
+
 extern int
 TclXOSSeekable _ANSI_ARGS_((Tcl_Interp  *interp,
                             Tcl_Channel  channel,
@@ -546,7 +554,7 @@ TclXOSfchmod _ANSI_ARGS_((Tcl_Interp *interp,
                           Tcl_Channel channel,
                           int         mode,
                           char       *funcName));
-extern int  
+extern int
 TclXOSChangeOwnGrpObj _ANSI_ARGS_((Tcl_Interp  *interp,
                                    unsigned     options,
                                    char        *ownerStr,
