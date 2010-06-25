@@ -1,0 +1,10 @@
+*.o
+Makefile
+a.out.dSYM/
+config.log
+config.status
+*.dylib
+*.so
+pkgIndex.tcl
+unix/tclxConfig.sh
+
