@@ -3,6 +3,7 @@ Makefile
 a.out.dSYM/
 config.log
 config.status
+configure.lineno
 *.dylib
 *.so
 pkgIndex.tcl
