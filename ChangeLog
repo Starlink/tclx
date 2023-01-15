@@ -1,9 +1,84 @@
+2012-11-07  Andreas Kupries  <andreask@activestate.com>
+
+	**** TCLX 8.4.1 RELEASE ****
+
+2008-12-15  Andreas Kupries  <andreask@activestate.com>
+
+	* generic/tclExtdInt.h:  Handle TIP#336 addition of API to access
+	* generic/tclXgeneral.c: interp->errorLine.
+	* generic/tclXlib.c:
+
+2008-06-30  Pat Thoyts  <patthoyts@users.sourceforge.net>
+
+	* win/makefile.vc:  Updated the NMAKE build files to the
+	* win/rules.vc:     current standard set for extensions.
+	* win/nmakehlp.c:
+	* win/common.vc:    removed
+	* win/tclx.rc:      Added new version resource.
+
+2007-02-27  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* unix/tclXunixPort.h: h_errno is a macro on AIX
+
+2006-01-25  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* configure.in, configure, tclconfig/tcl.m4: update to TEA 3.5
+
+2005-12-02  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* tclconfig/tcl.m4, configure: update to TEA 3.4
+	* configure.in: remove 'rename' check (no longer used)
+
+2005-11-25  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* library/pushd.tcl (pushd): correct dirs arg [Bug 1156134] and
+	clean up some other code.
+
+2005-11-21  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	**** TCLX 8.4.0 RELEASE ****
+
+	* generic/tclXstring.c (TclX_CrangeObjCmd): 64-bit cast fix
+
+	* generic/tclXmath.c (TclX_MathInit): restrict to only add min/max
+	expr funcs in <= 8.4
+
+	* generic/tclXkeylist.c: 64-bit cast warning squash
+
+	* library/tclx.tcl: protect scope of variables in init
+
+2005-11-20  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* Makefile.in: correct dist target
+
+	* README:       updated readme and install notes to TclX 8.4 std.
+	* unix/INSTALL: Windows nmake makefile still needs fixing, but
+	* unix/INSTALL.generic (removed):    TEA-based system works across
+	* win/INSTALL.txt, win/makefile.vc:  the board.
+	* win/common.bc, win/makefile.bc, win/makefile.vc.sub (removed):
+
+2005-11-17  Jeff Hobbs  <jeffh@ActiveState.com>
+
+	* library/tclx.tcl: unused sample pure Tcl readdir
+
+	* tests/cmdtrace.test (cmdtrace-3.2): remove errorInfo, as that
+	varies between Tcl versions, but main error is correct.
+
+	* tests/keylist.test:
+	* generic/tclXkeylist.c (DeleteKeyedListEntry): keep hash entries
+	in sync even if the deleted item was not in the hash.
+
+	* generic/tclXlist.c (TclX_LemptyObjCmd): simplify to force list
+	conversion, but ignore errors on bad lists.
+
+	* tests/fmath.test (fmath-1.21): adjust for bignum math in 8.5
+
 2005-10-07  Jeff Hobbs  <jeffh@ActiveState.com>
 
 	* unix/tclXunixPort.h: Correct INADDR_NONE define. [Bug 1242825]
 
-	* configure.in, tclconfig/tcl.m4: updated to 3.3, support for
-	Solaris 5.10 and amd64 64-bit builds.
+	* configure, configure.in, tclconfig/tcl.m4: updated to 3.3,
+	support for Solaris 5.10 and amd64 64-bit builds.
 
 2005-07-27  Jeff Hobbs  <jeffh@ActiveState.com>
 
