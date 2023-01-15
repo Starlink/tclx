@@ -12,7 +12,7 @@
  * software for any purpose.  It is provided "as is" without express or
  * implied warranty.
  *-----------------------------------------------------------------------------
- * $Id: tclXunixPort.h,v 8.4 2005/10/07 23:30:28 hobbs Exp $
+ * $Id: tclXunixPort.h,v 8.5 2007/02/28 00:14:09 hobbs Exp $
  *-----------------------------------------------------------------------------
  */
 
@@ -33,7 +33,9 @@
 #include <grp.h>
 #include <assert.h>
 
+#ifndef __xlC__ /* AIX xlc */
 extern int h_errno;
+#endif
 
 #ifdef __APPLE__
 # undef panic
