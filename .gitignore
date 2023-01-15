@@ -1,3 +1,5 @@
+*~
+.*.swp
 *.o
 Makefile
 a.out.dSYM/
